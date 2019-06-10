@@ -1,5 +1,5 @@
 <?php
-	require "./function/log.php"; //on importe la fonction log qui nous permettera d'ecrire dans le fichier log chaque hash que l'on fait
+	require "./log.php"; //on importe la fonction log qui nous permettera d'ecrire dans le fichier log chaque hash que l'on fait
 	function hash(string $str){ //fonction permettant de hasher tout et n'importe quoi (surtout les nom / preons pour secret médicale) et ecrit les logs au passage
 		$tab_hash =  hash_algos(); // on recupere la liste de tous les hash possible
 		$algo = null; //le choix de l'algo de hash se fera ici
