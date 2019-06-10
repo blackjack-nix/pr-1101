@@ -14,7 +14,8 @@
 			}
 		}
 		$hash = hash($algo, $str,$binaire); //on reeer un hash avec la methode choisise (sha 256 ou autre)
-		$log = log("Création du hash : ".$hash.". Avec la methode : ".$algo);//on ecrit dans le fihier log le hash qui a été créé ainsi que la methode
+		if ($algo =! "sha256") log("Sha256 non trouvé sur ce pc","./log/data.log");//si sha256 pas trouvé, on ecrit dans les logs, ca peut toujour servir; 
+		log("Création du hash : ".$hash.". Avec la methode : ".$algo , "./log/hash.log");//on ecrit dans le fihier log le hash qui a été créé ainsi que la methode
 		return $hash; //on return le hash crée
 	}
 ?>

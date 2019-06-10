@@ -1,7 +1,7 @@
 <?php
-	function log(string $erreur){ //fonction qui prend en parametre une string de l'erreur a ecrire dans le fichier;
+	function log(string $erreur, string $fichier){ //fonction qui prend en parametre une string de l'erreur a ecrire dans le fichier;
 
-	$fichier = fopen("./php.log", "a+"); //ouverture du fichier log en lecture et ecriture avec création du fichier si il n'existe pas;
+	$fichier = fopen($fichier, "a+"); //ouverture du fichier log en lecture et ecriture avec création du fichier si il n'existe pas;
 	
 	if ($fichier == null){ // on est si le pointeur est null (ce qui signifie qu'il n'a pas d'espace en mémoire donc pas bien ouvert);
 		echo "Erreur dans l'ouverture du fichier log"; // on affiche une erreur an html avec echo ;
