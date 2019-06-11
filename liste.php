@@ -16,6 +16,7 @@
 		$retour_json = lancerRequeteHTTP($url, $methode, $tableau);
 		$retour = json_decode($retour_json,TRUE);
 		$type_retour = gettype($retour);
+		echo '<PRE/>';
 		var_dump($retour);
 
 		/*echo "<form action=\"fichier a faire nous meme\" methode=".$methode." name=\"Session\">";
@@ -24,7 +25,7 @@
 			echo "<option value=".$value.">".$value."</option>";*/
 		//}
 	} else {
-		echo '<PRE/>';
+		
 		echo "L'authentification a echouée";
 	}
 	
