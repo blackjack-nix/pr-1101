@@ -16,10 +16,12 @@
 		$retour_json = lancerRequeteHTTP($url, $methode, $tableau);
 		$retour = json_decode($retour_json,TRUE);
 		$type_retour = gettype($retour);
-		echo "<form action=\"fichier a faire nous meme\" methode=".$methode." name=\"Session\">";
+		var_dump($retour);
+
+		/*echo "<form action=\"fichier a faire nous meme\" methode=".$methode." name=\"Session\">";
 		echo "Session : <select name=\"session\">";
 		foreach ($retour as $key => $value) {
-			echo "<option value=".$value.">".$value."</option>";
+			echo "<option value=".$value.">".$value."</option>";*/
 		}
 	} else {
 		echo "L'authentification a echouée";
