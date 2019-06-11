@@ -5,8 +5,8 @@
 </head>
 <body>
 	<form action="./liste.php" method="GET" name="Identification">
-		Username : <input type="text" name="user"/>
-		Password : <input type="text" name="pwd"/>
+		Username : <input type="text" name="user" required/>
+		Password : <input type="password" name="mdp" required/>
 		<input type="hidden" name="session" value="liste">
 		<input type="submit" value="Envoyer">
 	</form>
