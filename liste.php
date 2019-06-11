@@ -18,13 +18,24 @@
 		$type_retour = gettype($retour);
 		echo '<PRE/>';
 		var_dump($retour);
+		$i = 1;
 
-		/*echo "<form action=\"fichier a faire nous meme\" methode=".$methode." name=\"Session\">";
-		echo "Session : <select name=\"session\">";
 		foreach ($retour as $key => $value) {
-			echo "<option value=".$value.">".$value."</option>";*/
-		//}
-	} else {
+			$("user".$i) = $retour[$key];
+			$i++;
+		}
+
+
+
+		echo "<form action=\"fichier a faire nous meme\" methode=".$methode." name=\"Session\">";
+		echo "Session : <select name=\"session\">";
+
+		foreach ($retour as $key => $value) {
+
+			echo "<option value=".$value.">".$value."</option>";
+		}
+
+		} else {
 		
 		echo "L'authentification a echouée";
 	}
