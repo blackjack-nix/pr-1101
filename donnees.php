@@ -22,8 +22,37 @@
 		exit();
 	} 
 	if ($type_retour == "array"){
-echo "</pre>";
-var_dump($retour);
+	echo "<PRE>";
+
+	$tab_donnee_utilisateur = $retour["donnees_utilisateur"];
+	foreach($tab_donnee_utilisateur as $key => $value){
+		echo str_replace('_',' ',$key)." : ".$value . "<br>";
+	}
+	echo "<table border=\"1\" align=\"center\"><thead><tr><th></th><th>Moyenne</th><th>Ecart Type</th><th>Minimum</th><th>Maximum</th></tr></thead><tbody>";
+	$tab_indicateur_mesure = $retour["indicateurs_mesures"];
+	echo "<tr>
+		<td>BPM</td>
+		<td>".$tab_indicateur_mesure['Moyenne_BPM']."</td>
+		<td>".$tab_indicateur_mesure['Ecart_type_BPM']."</td>
+		<td>".$tab_indicateur_mesure['Min_BPM']."</td>
+		<td>".$tab_indicateur_mesure['Max_BPM']."</td>
+	      </tr>
+	      <tr>
+		<td>SPO2</td>
+		<td>".$tab_indicateur_mesure['Moyenne_SPO2']."</td>
+		<td>".$tab_indicateur_mesure['Ecart_type_SPO2']."</td>
+		<td>".$tab_indicateur_mesure['Min_SPO2']."</td>
+		<td>".$tab_indicateur_mesure['Max_SPO2']."</td>
+	      </tr>
+	      <tr>
+		<td>Temperature</td>
+		<td>".$tab_indicateur_mesure['Moyenne_temperature']."</td>
+		<td>".$tab_indicateur_mesure['Ecart_type_temperature']."</td>
+		<td>".$tab_indicateur_mesure['Min_temperature']."</td>
+		<td>".$tab_indicateur_mesure['Max_temperature']."</td>
+	      </tr></tbody></table>";
+
+	var_dump($retour);
 
 	}
 ?>

@@ -13,7 +13,7 @@
 				$algo = $tab_hash[$key]; // dans le cas ou il n'y a pas sha256 (peu probable mais on sait jamais), on prend n'importe lequel
 			}
 		}
-		$hash = hash($algo, $str,$binaire); //on reeer un hash avec la methode choisise (sha 256 ou autre)
+		$hash = hash($algo, $str,$binaire); //on creeer un hash avec la methode choisise (sha 256 ou autre)
 		if ($algo =! "sha256") log_redef("Sha256 non trouvé sur ce pc","./log/data.log");//si sha256 pas trouvé, on ecrit dans les logs, ca peut toujour servir; 
 		log_redef("Création du hash : ".$hash.". Avec la methode : ".$algo , "./log/hash.log");//on ecrit dans le fihier log le hash qui a été créé ainsi que la methode
 		return $hash; //on return le hash crée

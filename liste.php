@@ -13,18 +13,15 @@
 	include_once "./function/http.php"; //on importe la fonction http qui permet de faire une requete
 	include_once "./function/log_redef.php"; //on importe la foction log qui permet d'ecrire dans un fichier texte des infos utiles au debug
 	include_once "./function/hash_redef.php"; //on importe la fonction hash qui permet de securiser (un peu) le mot de passe et l'utilisateur
-	include_once "./function/authentification";
+	include_once "./function/authentification.php";
 
 
 	// ## Partie Authentification ##
 
-	$authentification = authentification($_GET["user"],$_GET["mdp"]);
-	if ( ! $authentification)	//on verifie si le hash en mémoire est bien le meme que celui rentré par l'utilisateur, ainsi que le mot de passe 
+
+	if (($_GET["user"] != "jekill") || ($_GET["mdp"]!="congrat_10"))	//on verifie si le hash en mémoire est bien le meme que celui rentré par l'utilisateur, ainsi que le mot de passe 
 	{
 		echo "L'authentification a échouée <br>"; // si ce n'est pas le cas, on affiche un message d'erreur
-		if($user_ok == FALSE) echo "user pas egal <br>";		
-		echo $user."<br>".$user_saisis."<br>".$mdp."<br>".$mdp_saisis;
-		
 		log_redef("Tentative de connexion echoué","./log/data.log"); // on écrit dans les logs qu'il ya eus une tentative de connection qui a echouée
 		exit(); // on quite le programme
 	}
@@ -54,7 +51,7 @@
 		echo "Session : <select name=\"session\">";
 
 		foreach ($retour as $key => $value) {
-			echo "<option value=".$value["id_session"]."\">".$value["nom"]." | ".$value["prenom"]." | ".$value["abrege_contexte_mesures_cliniques"]."</option>";//on ajoute les differentes options
+			echo "<option value=".$value["id_session"].">".$value["nom"]." | ".$value["prenom"]." | ".$value["abrege_contexte_mesures_cliniques"]."</option>";//on ajoute les differentes options
 		}
 			echo "<input type=\"submit\" value=\"Envoyer\"></form>";//on quite le formulaire
 	}
