@@ -1,5 +1,5 @@
 <?php
-	function log(string $erreur, string $fichier){ //fonction qui prend en parametre une string de l'erreur a ecrire dans le fichier;
+	function log_redef(string $erreur, string $fichier){ //fonction qui prend en parametre une string de l'erreur a ecrire dans le fichier;
 
 	$fichier = fopen($fichier, "a+"); //ouverture du fichier log en lecture et ecriture avec création du fichier si il n'existe pas;
 	
