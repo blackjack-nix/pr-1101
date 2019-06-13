@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<link rel="stylesheet" type="text/css" href="./style/style.css"/>
+	<link rel="stylesheet" type="text/css" href="./style/style_index.css"/>
 	<title>Accueil</title>
 	<meta charset="utf-8"/>
 </head>
 <body>
+	<div id="fond">
+		<img src="https://ak8.picdn.net/shutterstock/videos/12587588/thumb/1.jpg" alt="fond"/>
 	<form action="./liste.php" method="GET" name="Identification">
-		Utilisateur : <input id="user" type="text" name="user" required/><br>
+		Utilisateur : <input id="user" type="text" name="user" required/><br><br>
 		Mot de passe : <input id="pwd" type="password" name="mdp" required/><br>
 		<input type="hidden" name="session" value="liste">
 		<input id="sub" type="submit" value="Envoyer">
 	</form>
+	</div>
 </body>
 </html>
