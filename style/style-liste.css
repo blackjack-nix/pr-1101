@@ -1,9 +1,5 @@
- <head>
- <style>
-body {
-
 #fond img{  /*paramètres fond d'écran*/
-  position: absolute;
+	position: absolute; 
   top: 0;
   bottom: 0;
   left: 0;
@@ -13,12 +9,11 @@ body {
   opacity: 0.7;
 }
 
-input [type="session"] { /*paramètres menu déroulant*/
-  border: 2px solid red;
-  border-radius: 12px;
-  color: #E6E6FA;
+form{		/*parametres formulaire*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
 }
 
-}
-</style>
-</head>
