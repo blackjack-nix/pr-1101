@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+	<link rel="stylesheet" type="text/css" href="./style/style.css"/>
 	<title>Accueil</title>
+	<meta charset="utf-8"/>
 </head>
 <body>
 	<form action="./liste.php" method="GET" name="Identification">
-		Username : <input type="text" name="user" required/>
-		Password : <input type="password" name="mdp" required/>
+		Utilisateur : <input id="user" type="text" name="user" required/><br>
+		Mot de passe : <input id="pwd" type="password" name="mdp" required/><br>
 		<input type="hidden" name="session" value="liste">
-		<input type="submit" value="Envoyer">
+		<input id="sub" type="submit" value="Envoyer">
 	</form>
 </body>
 </html>
