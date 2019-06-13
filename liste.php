@@ -33,8 +33,8 @@
 
 	// ## Partie Préparatoire de la requete
 
-	$tableau = $_GET; //on creer les variables qui servent a stocker les parametres de l'envoie de la requete
-	$url = "http://147.215.191.33/pr_1101/ws_rasp.php"; //url du serveur
+	$tableau = $_GET; //on creer les variables 	qui servent a stocker les parametres de l'envoie de la requete
+	$url = "http://147.215.191.35/EDP/ws_rasp.php"; //url du serveur
 	$methode = "GET"; //methode de resquete
 
 
