@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<link rel="stylesheet" type="text/css" href="./style/style_index.css"/>
+	<link rel="stylesheet" type="text/css" href="./style/style_index.css"/> 
 	<title>Accueil</title>
 	<meta charset="utf-8"/>
 </head>
 <body>
 	<div id="fond">
 		<img src="https://ak8.picdn.net/shutterstock/videos/12587588/thumb/1.jpg" alt="fond"/>
-	<p><b>Bonjour,</b><br> veuillez vous identifier pour avoir acces a la base de donnees medicale.</p>
+	</div>
+	<div id="text_intro">
+		<h1><b>Bonjour,</b></h1><br><br>
+		<p><b>Veuillez vous identifier pour avoir acces a la base de donnees medicale :</b></p>
+	</div>
+	
+	
 	<form action="./liste.php" method="GET" name="Identification">
+		<fieldset>
+		<legend><b><i>Identification</i></b></legend>
 		Utilisateur : <input id="user" type="text" name="user" required/><br><br>
 		Mot de passe : <input id="pwd" type="password" name="mdp" required/><br>
 		<input type="hidden" name="session" value="liste">
+		</fieldset><br>
 		<input id="sub" type="submit" value="ENVOYER">
+		<br>
 	</form>
+	
+	
+	<div id="foot">
 	</div>
 </body>
 </html>

@@ -13,11 +13,12 @@ body {
 	opacity: 0.7;
 }
 
-p{
+#text_intro{		/*parametre du texte introductif*/
 	position: absolute;
 	text-align: center;
 	opacity: 1;
 	color: black;
+	font-family: fantasy; 
 }
 
 form{		/*parametres formulaire*/
@@ -26,6 +27,7 @@ form{		/*parametres formulaire*/
   left: 40%;
   width: auto;
   height: auto;
+  font-family: fantasy; 
   background-color: white;
   padding: 10px;
   margin: 20px 0px;
@@ -35,20 +37,20 @@ form{		/*parametres formulaire*/
 #user{		/*parametres champs de texte pour l'utilisateur*/
   align-items: middle;
   text-align: center;
-  background-color: white;
+  background-color: #E0FFFF;
   color: black;
 }
 
 #pwd{		/*parametres champs de texte pour le mot de passe*/
   align-items: middle;
-  align-items: center;
-  background-color: white;
+  text-align: center;
+  background-color: #E0FFFF;
   color: black;
 }
 
-input[type=sudmit] { /*parametres bouton envoye*/
+#sub { /*parametres bouton envoye*/
 	cursor: pointer;
-	float: center;
-	color: #1E90FF;
-	background-color: #1E90FF;
+	float: right;
+	color: black;
+	background-color: #E0FFFF;
 }
