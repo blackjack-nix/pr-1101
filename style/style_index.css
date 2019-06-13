@@ -1,5 +1,6 @@
 body {
   overflow: hidden;
+  font-family: 'Arial Narrow', Arial, sans-serif;
 }
 
 #fond img{		/*parametres fond d'ecran*/
@@ -14,21 +15,24 @@ body {
 }
 
 #text_intro{		/*parametre du texte introductif*/
-	position: absolute;
+  position: absolute;
 	text-align: center;
+  font-size: 20px;
 	opacity: 1;
 	color: black;
-	font-family: fantasy; 
+	top: 15%;
+	width: 100%;
 }
 
 form{		/*parametres formulaire*/
   position: absolute;
   top: 40%;
-  left: 40%;
+  left: 35%; /*revoir pour centrer le formulaire*/
   width: auto;
   height: auto;
   font-family: fantasy; 
   background-color: white;
+  border-radius: 10px;
   padding: 10px;
   margin: 20px 0px;
   display: inline-block;
@@ -37,7 +41,9 @@ form{		/*parametres formulaire*/
 #user{		/*parametres champs de texte pour l'utilisateur*/
   align-items: middle;
   text-align: center;
+  width: 200px;	
   background-color: #E0FFFF;
+  border-radius: 10px;
   color: black;
 }
 
@@ -45,10 +51,11 @@ form{		/*parametres formulaire*/
   align-items: middle;
   text-align: center;
   background-color: #E0FFFF;
+  border-radius: 10px;
   color: black;
 }
 
-#sub { /*parametres bouton envoye*/
+#sub { 	/*parametres bouton envoye*/
 	cursor: pointer;
 	float: right;
 	color: black;
