@@ -14,16 +14,22 @@ body {
 }
 
 p{
+	position: absolute;
+	text-align: center;
 	opacity: 1;
 	color: black;
 }
 
 form{		/*parametres formulaire*/
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 40%;
   width: auto;
   height: auto;
+  background-color: white;
+  padding: 10px;
+  margin: 20px 0px;
+  display: inline-block;
 }
 
 #user{		/*parametres champs de texte pour l'utilisateur*/
@@ -35,12 +41,14 @@ form{		/*parametres formulaire*/
 
 #pwd{		/*parametres champs de texte pour le mot de passe*/
   align-items: middle;
-  text-align: center;
+  align-items: center;
   background-color: white;
   color: black;
 }
 
 input[type=sudmit] { /*parametres bouton envoye*/
 	cursor: pointer;
+	float: center;
+	color: #1E90FF;
 	background-color: #1E90FF;
 }

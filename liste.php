@@ -17,7 +17,7 @@
 	include_once "./function/http.php"; //on importe la fonction http qui permet de faire une requete
 	include_once "./function/log_redef.php"; //on importe la foction log qui permet d'ecrire dans un fichier texte des infos utiles au debug
 	include_once "./function/hash_redef.php"; //on importe la fonction hash qui permet de securiser (un peu) le mot de passe et l'utilisateur
-	include_once "./function/authentification.php";
+	include_once " medicale../function/authentification.php";
 
 
 	// ## Partie Authentification ##

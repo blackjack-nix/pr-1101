@@ -11,8 +11,6 @@
 
 form{		/*parametres formulaire*/
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: auto;
   height: auto;
 }
