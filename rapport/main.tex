@@ -1,4 +1,4 @@
-	%import package%
+	%import packages%
 \documentclass[12pt]{report}
 \usepackage[a4paper]{geometry}
 \usepackage[myheadings]{fullpage}
@@ -9,12 +9,13 @@
 \usepackage[font=small, labelfont=bf]{caption}
 \usepackage{fourier}
 \usepackage[protrusion=true, expansion=true]{microtype}
-\usepackage[english]{babel}
+\usepackage[francais]{babel}
 \usepackage{sectsty}
 \usepackage{url, lipsum}
 \usepackage{tgbonum}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{graphicx}
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 \onehalfspacing
@@ -24,6 +25,9 @@
 
 	%page de couverture%
 \begin{document}
+\begin{figure}[t]
+	\includegraphics{./image/logo_esiee.jpeg/}
+\end{figure}
 {\fontfamily{cmr}\selectfont
 \title{ \normalsize \textsc{}
 	\\ [2.0cm]
@@ -50,7 +54,7 @@
 
 
 	%pages de texte%
-\section{Problematique}
+\section{Introduction}
 \input{problematique.tex}
 \newpage
 
