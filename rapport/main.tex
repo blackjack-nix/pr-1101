@@ -1,0 +1,71 @@
+	%import package%
+\documentclass[12pt]{report}
+\usepackage[a4paper]{geometry}
+\usepackage[myheadings]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[english]{babel}
+\usepackage{sectsty}
+\usepackage{url, lipsum}
+\usepackage{tgbonum}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+
+	%page de couverture%
+\begin{document}
+{\fontfamily{cmr}\selectfont
+\title{ \normalsize \textsc{}
+	\\ [2.0cm]
+	\HRule{0.5pt} \\
+	\LARGE \textbf{\uppercase{Rapport de projet}
+	\HRule{2pt} \\ [0.5cm]
+	\normalsize \today \vspace*{5\baselineskip}}
+	}
+
+\date{25 juin 2019}
+
+\author{
+	Laurent DELATTE, Théo PERESSE-GOURBIL, Manon HERMANN \\ 
+	ESIEE Paris \\
+	Projet de traitement de données médicales }
+
+\maketitle
+\tableofcontents
+\newpage
+
+
+	%page de sommaire%
+\sectionfont{\scshape}
+
+
+	%pages de texte%
+\section{Problematique}
+\input{problematique.tex}
+\newpage
+
+\section{Demarche Scientifique}
+\input{demarche.tex}
+\newpage
+
+\section{Resultat obtenu}
+\input{resultat.tex}
+\newpage
+
+\section{Bilan Personnel}
+\input{bilan.tex}
+\newpage
+
+
+
+\end{document}
