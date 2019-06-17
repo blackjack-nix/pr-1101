@@ -16,14 +16,13 @@
 
 	include_once "./function/http.php"; //on importe la fonction http qui permet de faire une requete
 	include_once "./function/log_redef.php"; //on importe la foction log qui permet d'ecrire dans un fichier texte des infos utiles au debug
-	include_once "./function/hash_redef.php"; //on importe la fonction hash qui permet de securiser (un peu) le mot de passe et l'utilisateur
 	include_once " medicale../function/authentification.php";
 
 
 	// ## Partie Authentification ##
 
-
-	if (($_GET["user"] != "jekill") || ($_GET["mdp"]!="congrat_10"))	//on verifie si le hash en mémoire est bien le meme que celui rentré par l'utilisateur, ainsi que le mot de passe
+	if (authentification($_GET["user"],$_GET["mdp"]))
+	//if (($_GET["user"] != "jekill") || ($_GET["mdp"]!="congrat_10"))	//on verifie si le hash en mémoire est bien le meme que celui rentré par l'utilisateur, ainsi que le mot de passe
 	{
 		echo "L'authentification a échouée <br>"; // si ce n'est pas le cas, on affiche un message d'erreur
 		log_redef("Tentative de connexion echoué","./log/data.log"); // on écrit dans les logs qu'il ya eus une tentative de connection qui a echouée
