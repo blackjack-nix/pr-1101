@@ -3,7 +3,7 @@ body {
   font-family: 'Arial Narrow', Arial, sans-serif;
 }
 
-#fond img{		/*parametres fond d'ecran*/
+#fond img {		/*parametres fond d'ecran*/
 	position: absolute; 
 	top: 0;
 	bottom: 0;
@@ -14,7 +14,7 @@ body {
 	opacity: 0.7;
 }
 
-#text_intro{		/*parametre du texte introductif*/
+#text_intro {		/*parametre du texte introductif*/
   position: absolute;
 	text-align: center;
   font-size: 20px;
@@ -24,10 +24,11 @@ body {
 	width: 100%;
 }
 
-form{		/*parametres formulaire*/
+form {		/*parametres formulaire*/
   position: absolute;
   top: 40%;
-  left: 35%; /*revoir pour centrer le formulaire*/
+  left: 50%; 
+  transform: translate(-50%,-50%);
   width: auto;
   height: auto;
   font-family: fantasy; 
@@ -38,7 +39,7 @@ form{		/*parametres formulaire*/
   display: inline-block;
 }
 
-#user{		/*parametres champs de texte pour l'utilisateur*/
+#user {		/*parametres champs de texte pour l'utilisateur*/
   align-items: middle;
   text-align: center;
   width: 200px;	
@@ -47,7 +48,7 @@ form{		/*parametres formulaire*/
   color: black;
 }
 
-#pwd{		/*parametres champs de texte pour le mot de passe*/
+#pwd {		/*parametres champs de texte pour le mot de passe*/
   align-items: middle;
   text-align: center;
   background-color: #E0FFFF;
@@ -55,9 +56,25 @@ form{		/*parametres formulaire*/
   color: black;
 }
 
-#sub { 	/*parametres bouton envoye*/
+#sub { 	/*parametres bouton envoyer*/
 	cursor: pointer;
 	float: right;
 	color: black;
 	background-color: #E0FFFF;
+}
+
+footer {		/*parametre pour le texte en bas de page*/
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+	right: 0;
+	text-align: left;
+	color: black;
+}
+
+footer img {		/*parametre pour l'image en bas de page*/
+	position: relative;
+	float: right;
+	margin-bottom: 40px;
+	margin-right: 40px;
 }

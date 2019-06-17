@@ -1,4 +1,9 @@
-#fond img{  /*paramètres fond d'écran*/
+body {
+  overflow: hidden;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+#fond img{		/*paramètres fond d'écran*/
 	position: absolute; 
   top: 0;
   bottom: 0;
@@ -9,9 +14,59 @@
   opacity: 0.7;
 }
 
-form{		/*parametres formulaire*/
+#text_intro {		/*parametre du texte introductif*/
   position: absolute;
+	text-align: center;
+  font-size: 20px;
+	opacity: 1;
+	color: black;
+	top: 15%;
+	width: 100%;
+}
+
+form {		/*parametres formulaire*/
+  position: absolute;
+  top: 40%;
+  left: 50%; 
+  transform: translate(-50%,-50%);
   width: auto;
   height: auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 0px;
+  display: inline-block;
+}
+
+#session {
+	cursor: pointer;
+	align-items: middle;
+  text-align: center;
+  background-color: #E0FFFF;
+  border-radius: 10px;
+  color: black;
+}
+
+#submit { 	/*parametres bouton envoyer*/
+	cursor: pointer;
+	float: right;
+	color: black;
+	background-color: #E0FFFF;
+}
+
+footer p{		/*parametre pour le texte en bas de page*/
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+	right: 0;
+	text-align: left;
+	color: black;
+}
+
+footer img {		/*parametre pour l'image en bas de page*/
+	position: relative;
+	float: right;
+	margin-bottom: 40px;
+	margin-right: 40px;
 }
 

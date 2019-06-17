@@ -23,11 +23,11 @@
 
 
 	//a faire uniquement la premiere fois 
-	$parametres = array('salt' => "Ceciestunsaltfort", );
+	$parametres = array('salt' => "Ceciestunsaltfortdeplusde17caractere", );
 	$mdp_hash = password_hash("congrat_10", PASSWORD_DEFAULT,$parametres);
 	$user_hash = password_hash("jekill", PASSWORD_DEFAULT,$parametres);
-	echo "mdp :".$mdp_hash;
-	echo "user :".$user_hash;
+	echo "mdp :".$mdp_hash.'<br>';
+	echo "user :".$user_hash.'<br>';
 
 	fclose($fichier_user); // on ferme le fichier, plus sur et evite les fuites mémoires
 	fclose($fichier_mdp); // on ferme le fichier, plus sur et evite les fuites mémoires
