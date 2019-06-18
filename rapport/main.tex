@@ -9,6 +9,7 @@
 \usepackage[font=small, labelfont=bf]{caption}
 \usepackage{fourier}
 \usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
 \usepackage{sectsty}
 \usepackage{url, lipsum}
@@ -16,6 +17,7 @@
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{hyperref}
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 \onehalfspacing
@@ -26,7 +28,7 @@
 	%page de couverture%
 \begin{document}
 \begin{figure}[t]
-	\includegraphics{./images/logo_esiee.jpeg/}
+	\includegraphics[width=4cm]{./images/logo_esiee.jpeg/}
 \end{figure}
 {\fontfamily{cmr}\selectfont
 \title{ \normalsize \textsc{}
@@ -34,7 +36,7 @@
 	\HRule{0.5pt} \\
 	\LARGE \textbf{\uppercase{Rapport de projet}
 	\HRule{2pt} \\ [0.5cm]
-	\normalsize \today \vspace*{5\baselineskip}}
+	\normalsize  \vspace*{5\baselineskip}}
 	}
 
 \date{25 juin 2019}
@@ -47,10 +49,7 @@
 \maketitle
 \tableofcontents
 \newpage
-
-
-	%page de sommaire%
-\sectionfont{\scshape}
+%\sectionfont{\scshape}
 
 
 	%pages de texte%
@@ -58,11 +57,11 @@
 \input{problematique.tex}
 \newpage
 
-\section{Demarche Scientifique}
+\section{Démarche Scientifique}
 \input{demarche.tex}
 \newpage
 
-\section{Resultat obtenu}
+\section{Résultat obtenu}
 \input{resultat.tex}
 \newpage
 
