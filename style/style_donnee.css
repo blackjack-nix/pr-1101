@@ -1,9 +1,10 @@
 body {
-  overflow: hidden;
+  overflow: auto;
   font-family: 'Arial Narrow', Arial, sans-serif;
   margin-top: 130px;
   margin-left: 50px;
   margin-right: 50px;
+  background-color: #6FC1D0; 
 }
 
 #fond img {		/*paramètres fond d'écran*/
@@ -13,7 +14,7 @@ body {
   left: 0;
   right: 0;
   width: 100%;
-  height: 100%;
+  height: 130%;
   opacity: 0.7;
 }
 
@@ -23,11 +24,30 @@ body {
 
 #orange {
 	color: #FF8A3D;
+	font-weight: bold;
 }
 
 #vert {
 	color: #7FFF00;
 	font-weight: bold;
+}
+
+#gauche, #droite {
+	display: inline-block;
+	align-items: baseline;
+	width: 50%%;
+}
+
+#droite { /*endroit du graphique*/
+	position: relative; 
+	margin-left: 5%;
+	width: 50%;
+}
+
+#gauche { /*endroit des tests*/
+	position: relative; 
+	/*float: left;*/
+	max-width: 50%;
 }
 
 legend {
@@ -81,6 +101,17 @@ th, td {
 
 #resultat {		/*parametre du resultat de l'analyse*/
 	position: relative;
-	width: 100%;
+	text-align: center;
+	align-items: center;
+	white-space: normal;
+	width: 90%;
+	font-size: 15px;
 }
 
+
+#retour { 	/*parametres bouton envoyer*/
+	cursor: pointer;
+	color: black;
+	background-color: #E0FFFF;
+	position: relative;
+}
