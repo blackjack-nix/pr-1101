@@ -14,7 +14,7 @@ body {
   opacity: 0.7;
 }
 
-#text_intro {		/*parametre du texte introductif*/
+#text_intro {		/*parametres du texte introductif*/
   position: absolute;
 	text-align: center;
   font-size: 20px;
@@ -38,7 +38,7 @@ form {		/*parametres formulaire*/
   display: inline-block;
 }
 
-#session {
+#session {		/*parametres de la listes des sessions*/
 	cursor: pointer;
 	align-items: middle;
   text-align: center;
@@ -54,7 +54,8 @@ form {		/*parametres formulaire*/
 	background-color: #E0FFFF;
 }
 
-footer p{		/*parametre pour le texte en bas de page*/
+
+footer {		/*parametres pour le texte en bas de page*/
 	position: absolute;
 	bottom: 0;
 	left: 10px;
@@ -63,10 +64,9 @@ footer p{		/*parametre pour le texte en bas de page*/
 	color: black;
 }
 
-footer img {		/*parametre pour l'image en bas de page*/
+footer img {		/*parametres pour l'image en bas de page*/
 	position: relative;
 	float: right;
 	margin-bottom: 40px;
 	margin-right: 40px;
 }
-

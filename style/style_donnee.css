@@ -1,0 +1,86 @@
+body {
+  overflow: hidden;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  margin-top: 130px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#fond img {		/*paramètres fond d'écran*/
+	position: absolute; 
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+
+#rouge {		
+	color: red;
+}
+
+#orange {
+	color: #FF8A3D;
+}
+
+#vert {
+	color: #7FFF00;
+	font-weight: bold;
+}
+
+legend {
+	font-size: 15px;
+	color: white; 
+}
+
+h1 {		/*parametres du titre du dossier medical*/
+	position: absolute;
+	text-align: center;
+  font-size: 25px;
+  text-decoration:underline;
+	opacity: 1;
+	color: black;
+	top: 5%;
+	width: 100%;
+}
+
+#donnee_serveur {		/*parametres des donnees reccuperer sur le serveurs*/
+	position: relative;
+	opacity: 1;
+	width: 10%;
+}
+
+#donnee_calcul {		/*paramatres des donnees calculees*/
+	position: relative;
+	opacity: 1;
+	width: 10%;
+}
+
+table {
+	/*left: 50%;
+	transform: translate(-50%,-50%);*/
+	border-collapse: collapse;
+	width: 30%;
+}
+
+table, th, td {
+	border: solid white; 
+	position: relative;
+	text-align: center;
+	align-items: center;
+	border-width: 2px;
+	/*left: 50%:*/
+}
+
+th, td {
+	width: 50px;
+	height: 30px;
+}
+
+#resultat {		/*parametre du resultat de l'analyse*/
+	position: relative;
+	width: 100%;
+}
+

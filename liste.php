@@ -56,7 +56,6 @@
 
 	if ($type_retour == "array"){ //si le retour est un tableau
 		echo "<form action=\"./donnees.php\" methode=".$methode." name=\"Session\">";//on creer le formulaire avec les differents propositions qui nous sont retournées par la requete
-		echo"<fieldset>";
 		echo"<legend><b><i>Session</i></b></legend>";
 		echo "<input type=\"hidden\" name=\"user\" value=\"jekill\">";
 		echo "<input type=\"hidden\" name=\"mdp\" value=\"congrat_10\">";
@@ -65,17 +64,15 @@
 		foreach ($retour as $key => $value) {
 			echo "<option value=".$value["id_session"].">".$value["nom"]." | ".$value["prenom"]." | ".$value["abrege_contexte_mesures_cliniques"]."</option>";//on ajoute les differentes options
 		}
-			echo"</fieldset><br>";
-			echo "<input id=\"submit\" type=\"submit\" value=\"Envoyer\"></form>";//on quite le formulaire
 	}
-
 ?>
+<br>
+<input id="submit" type="submit" value="VALIDER"> </form>
+	
 
-
-
-<footer>
+<footer id="footer">
 		<p>Fait par : Laurent Delatte, Theo Peresse-Gourbil et Manon Hermann. <br> Dans le cadre du projet de fin de premiere annee à l'ESIEE Paris</p>
 		<img src="https://esiee.fr/sites/all/themes/custom/esiee_theme/logo.png"/>
-	</footer>
+</footer>
 </body>
 </html>
