@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Liste de données</title>
 	<link rel="stylesheet" type="text/css" href="./style/style-liste.css"/>
+	<link rel="icon" type="image/png" href="./image/logo.png" />
+
 </head>
 <body>
 	<div id="fond">
@@ -16,7 +18,6 @@
 
 	include_once "./function/http.php"; //on importe la fonction http qui permet de faire une requete
 	include_once "./function/log_redef.php"; //on importe la foction log qui permet d'ecrire dans un fichier texte des infos utiles au debug
-	include_once "./function/authentification.php";
 
 
 	// ## Partie Authentification ##
@@ -24,7 +25,10 @@
 
 	if (($_GET["user"] != "jekill") || ($_GET["mdp"]!="congrat_10"))	//on verifie si le hash en mémoire est bien le meme que celui rentré par l'utilisateur, ainsi que le mot de passe
 	{
-		echo "L'authentification a échouée <br>"; // si ce n'est pas le cas, on affiche un message d'erreur
+		echo "<h1 id=\"echec\">L'authentification a échouée</h1>"; // si ce n'est pas le cas, on affiche un message d'erreur
+		echo "<form>
+  				<input id=\"retour\" type=\"button\" value=\"Retour\" onclick=\"history.go(-1)\">
+			  </form>";
 		log_redef("Tentative de connexion echoué","./log/data.log"); // on écrit dans les logs qu'il ya eus une tentative de connection qui a echouée
 		exit(); // on quite le programme
 	}

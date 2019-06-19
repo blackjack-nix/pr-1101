@@ -4,7 +4,6 @@
 	<title>Résultat des données</title>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="./style/style_donnee.css"/>
-	<link rel="icon" type="image/png" href="./image/logo.png" />
 </head>
 <body>
 	<div id="fond">
@@ -18,7 +17,7 @@
 	include_once "./function/graphique_BPM.php";//on importe la librairie qui permet d creer un graph avec les points
 
 
-	$prevention = "<br>Nous vous conseillons cependant de consulter un médecin qui pourra effectuer un vrai diagnostic avec l'aide d'instruments de mesures plus précis<br>";//message de prévention
+	$prevention = "<br>Nous vous consillons cependant de consulter un médecin qui pourra effectuer un vrai diagnostic avec l'aide d'instruments de mesures plus précis<br>";//message de prévention
 
 	// ## Partie préparation de la requete ##
 	$tableau = $_GET; //on creer les variables qui servent a stocker les parametres de l'envoie de la requete
@@ -33,7 +32,6 @@
 	if ($type_retour != "array")
 	{// si le type de retour est une string, cest qu'il ya eus une erreur
 		echo $retour; //on affiche donc cette erreur
-		log_redef("Erreur dans la reception du tableau \n","./log/data.log");
 		exit();
 	}
 	echo "<PRE>";
@@ -50,7 +48,7 @@
 	echo "<h1>Dossier médicale du patient n°".$tab_donnee_utilisateur["no_utilisateur"].", ".strtoupper($tab_donnee_utilisateur["nom"])." ".ucwords(strtolower($tab_donnee_utilisateur["prenom"])).":</h1>";//permet de metre en forme le titre de la page
 
 	// Partie affichage des données fournies par le serveur
-echo "<div id=\"gauche\">";
+echo "<div id=\gauche\">";
 	echo "<div id=\"donnee_serveur\">";//div qui permet la mise en forme css
 		echo "<fieldset>";//permet de mettre un cadre
 			echo "<legend><b><i>Données du patient</i></b></legend>";//legende du titre
@@ -73,10 +71,8 @@ echo "<div id=\"gauche\">";
 		if ($value["valeur_BPM"] != 0) {//si la mesure de bpm n'est pas nulle,
 			$tab_mesure_bpm[]=$value["valeur_BPM"];//on met la mesure de pbm dans le tab de pbm
 			$tab_mesure_date[]=$value["date_mesure"];// et la mesure de date dans le tab de date
-
 		}else {
 			unset($key);// sinon, on supprime la ligne
-			log_redef("valeurs du tableau bpm nulles \n","./log/data.log");
 		}
 	}
 
@@ -92,7 +88,6 @@ echo "<div id=\"gauche\">";
 		else
 		{
 			unset($key);
-			log_redef("valeurs du tableau spo2 nulles \n","./log/data.log");
 		}
 	}
 
@@ -106,7 +101,6 @@ echo "<div id=\"gauche\">";
 		else
 		{
 			unset($key);
-			log_redef("valeurs du tableau temperature nulles \n","./log/data.log");
 		}
 	}
 
@@ -116,7 +110,7 @@ echo "<div id=\"gauche\">";
 
 	$Moyenne_BPM = (array_sum($tab_mesure_bpm)/sizeof($tab_mesure_bpm));//on calcul la moyenne en faisant la somme du tableau et en divisant par la taille
 	$Ecart_type_BPM = stats_standard_deviation($tab_mesure_bpm);// on recalcul l'ecart type
-  	$Min_BPM = min($tab_mesure_bpm); //on récupere le min
+  $Min_BPM = min($tab_mesure_bpm); //on récupere le min
 	$Max_BPM = max($tab_mesure_bpm); //et le max
 
 	$Moyenne_SPO2 = (array_sum($tab_mesure_SPO2) / sizeof($tab_mesure_SPO2));
@@ -139,7 +133,7 @@ echo "<div id=\"gauche\">";
 				{
 					echo "<p id=\"rouge\">";
 				}
-				echo "<b>Température : </b>".round($Moyenne_temperature,2)."</p>";
+				echo "<b>Température : </b>".round($Moyenne_temperature,2)."<br>";
 
 				//on cherche dans quelle tranche se situe le patient
 				if ($Moyenne_BPM <= 52)
@@ -162,11 +156,11 @@ echo "<div id=\"gauche\">";
 				{	// 75eme perfentil
 					echo "<p><b>Positionnement :</b>75ème percentile</p>";
 				}
-				elseif ($Moyenne_BPM < 88)
+				elseif ($Moyenne_BPM <= 83)
 				{	// 90eme percentil
 					echo "<p id=\"orange\"><b>Positionnement :</b> 90ème percentile</p>";
 				}
-				elseif ($Moyenne_BPM >= 88)
+				elseif ($Moyenne_BPM <= 88)
 				{	//95eme percentil
 					echo "<p id=\"rouge\"><b>Positionnement :</b> 95ème percentile</p>";
 				}
@@ -180,7 +174,6 @@ echo "<div id=\"gauche\">";
 
 		echo "</fieldset>";//on ferme le cadre
 	echo "</div>";//on ferme la div des données calculées
-	
 
 
 	echo "<br><div id=\"tab\">";
@@ -212,33 +205,16 @@ echo "<div id=\"gauche\">";
 	echo "</div>";//div du tableau
 echo "</div>";// div gauche
 
-log_redef("Myenne bpm : ".$Moyenne_BPM."\n","./log/data.log");
-log_redef("Ecart-type bpm : ".$Ecart_type_BPM."\n","./log/data.log");
-log_redef("Min bpm : ".$Min_BPM."\n","./log/data.log");
-log_redef("Max bpm : ".$Max_BPM."\n","./log/data.log");
-
-log_redef("moyenne spo2 : ".$Moyenne_SPO2."\n","./log/data.log");
-log_redef("Ecart-type spo2 : ".$Ecart_type_SPO2."\n","./log/data.log");
-log_redef("Min spo2 : ".$Min_SPO2."\n","./log/data.log");
-log_redef("Max spo2 : ".$Max_SPO2."\n","./log/data.log");
-
-log_redef("Moyenne temperature : ".$Moyenne_temperature."\n","./log/data.log");
-log_redef("Ecart-type temperature : ".$Ecart_type_temperature."\n","./log/data.log");
-log_redef("Min temperature : ".$Min_temperature."\n","./log/data.log");
-log_redef("Max temperature : ".$Max_temperature."\n","./log/data.log");
-
-
 echo "<div id=\"droite\">";
 	//Affichage du graphique_BPM
 
-	traceGrapheBPM($tab_donnee_utilisateur, $tab_mesure_bpm, $tab_mesure_date);
+	traceGrapheBPM($donnees_utilisateur, $tab_mesure_bpm, $tab_mesure_date);
 	echo "<img src='./tmp/grapheBPM.png'>";
 echo "</div>";//div gauche
 
-	echo "<br><br><br><div id=resultat>";
+	echo "<br><br><div id=resultat>";
 	echo "<fieldset><legend><b><i>Résultat de l'analyse</i></b></legend>";
 
-	echo "<br>";
 	// ## arbre de décision ##
 	if ($Moyenne_BPM >= 88)
 	{
@@ -297,13 +273,5 @@ echo "</div>";//div gauche
 	echo "</div>";
 
 ?>
-<form action="./liste.php" method="GET" name="Identification">
-	<input type="hidden" name="user" value="jekill">
-	<input type="hidden" name="mdp" value="congrat_10">
-	<input type="hidden" name="session" value="liste">
-	<input id="retour" type="submit" value="Retour aux sessions">
-</form>
-
-
 </body>
 </html>
