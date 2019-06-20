@@ -12,11 +12,19 @@
 	</div>
 <?php
 
+	if ($_SERVER["HTTP_HOST"] == "147.215.191.33") {
+		$image = TRUE;
+	} else {
+		$image = FLASE;
+	}
+
 	include_once "./function/http.php"; //on importe la fonction http qui permet de faire une requete
 	include_once "./function/log_redef.php"; //on importe la foction log qui permet d'ecrire dans un fichier texte des infos utiles au debug
 	include_once "./function/stats_standard_deviation.php";//on importe la fonction qui nous permet de recalculer les ecarts types
-	include_once "./function/graphique_BPM.php";//on importe la librairie qui permet d creer un graph avec les points
-
+	
+	if ($image) {
+		include_once "./function/graphique_BPM.php";//on importe la librairie qui permet d creer un graph avec les points
+	}
 
 	$prevention = "<br>Nous vous conseillons cependant de consulter un médecin qui pourra effectuer un vrai diagnostic avec l'aide d'instruments de mesures plus précis<br>";//message de prévention
 
@@ -229,10 +237,15 @@ log_redef("Max temperature : ".$Max_temperature."\n","./log/data.log");
 
 
 echo "<div id=\"droite\">";
+	
 	//Affichage du graphique_BPM
+	if ($image) {
+		traceGrapheBPM($tab_donnee_utilisateur, $tab_mesure_bpm, $tab_mesure_date);
+		echo "<img src='./tmp/grapheBPM.png'>";
+	}
+	
 
-	traceGrapheBPM($tab_donnee_utilisateur, $tab_mesure_bpm, $tab_mesure_date);
-	echo "<img src='./tmp/grapheBPM.png'>";
+
 echo "</div>";//div gauche
 
 	echo "<br><br><br><div id=resultat>";

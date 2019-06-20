@@ -1,10 +1,10 @@
 	%import packages%
-\documentclass[12pt]{report}
+\documentclass[12pt]{article}
 \usepackage[a4paper]{geometry}
 \usepackage[myheadings]{fullpage}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
-\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage{wrapfig, subcaption, setspace, booktabs}
 \usepackage[T1]{fontenc}
 \usepackage[font=small, labelfont=bf]{caption}
 \usepackage{fourier}
@@ -17,7 +17,10 @@
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{endnotes}
+\renewcommand{\footnote}[1]{\endnote{#1}}
+\renewcommand{\theendnote}{}
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 \onehalfspacing
@@ -28,16 +31,17 @@
 	%page de couverture%
 \begin{document}
 \begin{figure}[t]
-	\includegraphics[width=4cm]{./images/logo_esiee.jpeg/}
+	\includegraphics[width=4cm]{logo_esiee.jpeg}
 \end{figure}
-{\fontfamily{cmr}\selectfont
+
+\fontfamily{cmr} \selectfont
 \title{ \normalsize \textsc{}
 	\\ [2.0cm]
 	\HRule{0.5pt} \\
 	\LARGE \textbf{\uppercase{Rapport de projet}
 	\HRule{2pt} \\ [0.5cm]
 	\normalsize  \vspace*{5\baselineskip}}
-	}
+}
 
 \date{25 juin 2019}
 
@@ -45,16 +49,25 @@
 	Laurent DELATTE, Théo PERESSE-GOURBIL, Manon HERMANN \\ 
 	ESIEE Paris \\
 	Projet de traitement de données médicales }
-
 \maketitle
-\tableofcontents
-\newpage
-%\sectionfont{\scshape}
 
+
+\newpage
+\tableofcontents
+ \vspace{4\baselineskip}
+\textbf{Lien du projet :} \textcolor{blue}{\url{http://147.215.191.33/web2/projet/}}
+\\
+
+\textbf{Lien GitHub :}\textcolor{blue}{\url{https://github.com/blackjack-nix/pr-1101}}
+
+\newpage
+
+
+\sectionfont{\scshape}
 
 	%pages de texte%
 \section{Introduction}
-\input{problematique.tex}
+\input{intro.tex}
 \newpage
 
 \section{Démarche Scientifique}
@@ -68,7 +81,5 @@
 \section{Bilan Personnel}
 \input{bilan.tex}
 \newpage
-
-
 
 \end{document}
